@@ -12,7 +12,7 @@ app.on('window-all-closed', function() {
 });
 
 app.on('ready', function() {
-    mainWindow = new BrowserWindow({width: 480, height: 320});
+    mainWindow = new BrowserWindow({width: 480, height: 320, "web-preferences": {"overlay-scrollbars": true}});
     mainWindow.loadUrl('file://' + __dirname + '/index.html');
     mainWindow.setMenuBarVisibility(false);
 
