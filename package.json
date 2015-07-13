@@ -1,0 +1,21 @@
+{
+  "name": "open-jukebox",
+  "version": "0.1.0",
+  "main": "main.js",
+  "description": "A jukebox-style music player.",
+  "scripts": {
+    "test": "electron ."
+  },
+  "author": "Javier Rizzo",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/JavierRizzoA/open-jukebox"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "audio5": "^0.1.10",
+    "bootstrap": "^3.3.5",
+    "jquery": "^2.1.4",
+    "slick-carousel": "^1.5.5"
+  }
+}

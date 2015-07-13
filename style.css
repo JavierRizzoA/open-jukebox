@@ -1,0 +1,54 @@
+body {
+    background-color: #D3D3D3;
+}
+
+.albumCovers {
+    overflow:hidden;
+    margin-top: 50px;
+}
+
+.albumCovers img {
+    height: 120px;
+    width: 120px;
+    margin: 15px 5px 5px 5px;
+    border: 5px solid #FFFFFF;
+    display: block;
+    width: 100%;
+}
+
+.albumCovers .slick-center img{
+    width: 140px;
+    height: 140px;
+    margin: 5px 5px 5px 0px;
+}
+
+.badge a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.badge a:visited {
+    text-decoration: none;
+}
+
+.badge a:hover {
+    text-decoration: none;
+    color: #D3D3D3;
+}
+
+.badge a:active {
+    text-decoration: none;
+}
+
+#mainContainer {
+    padding-top: 10px;
+}
+
+#toolbar {
+    margin-top: 5px;
+}
+
+#addAlbum {
+    margin-top: -40px;
+}
+

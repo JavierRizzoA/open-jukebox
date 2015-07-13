@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>open-jukebox</title>
+
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="node_modules/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="node_modules/slick-carousel/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="row text-center">
+          <div id="toolbar">
+            <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#settingsModal"><span class="glyphicon glyphicon-cog"></span></button>
+              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#aboutModal"><span class="glyphicon glyphicon-info-sign"></span></button>
+            </div>
+            <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="btn btn-default" onclick="JUKEBOX.restartSong();"><span class="glyphicon glyphicon-step-backward"></span></button>
+              <button type="button" class="btn btn-default" onclick="JUKEBOX.backward();"><span class="glyphicon glyphicon-backward"></span></button>
+              <button id="playPauseButton" type="button" class="btn btn-default" onclick="if(JUKEBOX.player.duration > 0) JUKEBOX.player.playPause();"><span class="glyphicon glyphicon-play"></span></button>
+              <button type="button" class="btn btn-default" onclick="JUKEBOX.forward();"><span class="glyphicon glyphicon-forward"></span></button>
+              <button type="button" class="btn btn-default" onclick="JUKEBOX.nextSong();"><span class="glyphicon glyphicon-step-forward"></span></button>
+            </div>
+            <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#playlistModal"><span class="glyphicon glyphicon-list"></span></button>
+              <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+            </div>
+          </div>
+        </div>
+        <div class="row text-center">
+          <span id="nowPlaying" class="label label-default">Now playing: Some song</span>
+        </div>
+      </div>
+    </nav>
+    <div id="mainContainer" class="container">
+      <div class="row">
+        <div id="albumCovers" class="albumCovers slider center">
+        </div>
+      </div>
+      <div class="row text-center">
+        <span id="addAlbum" class="badge"><a href="">Add album to playlist</a></span>
+      </div>
+
+      <div class="row">
+        <div id="albumList" class="list-group">
+        </div>
+      </div>
+    </div>
+    <div id="playlistModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4>Playing next:</h4>
+          </div>
+          <div class="modal-body">
+            <div id="playlistList" class="list-group">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="settingsModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4>Settings</h4>
+          </div>
+          <div class="modal-body">
+            <h4>Library Path</h4>
+            <h4>Language</h4>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="aboutModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h3>About</h3>
+          </div>
+          <div class="modal-body">
+            <p>open-jukebox 0.1.0</p>
+            <p>By Javier Rizzo</p>
+            <h4>License</h4>
+            <p>Copyright &copy; 2015 Javier Rizzo</p>
+            <p>Read the LICENSE file for more information</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <script>window.$ = window.jQuery = require('jquery')</script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="node_modules/slick-carousel/slick/slick.min.js"></script>
+    <script src="jukebox.js"></script>
+  </body>
+</html>
