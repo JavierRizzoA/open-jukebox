@@ -34,7 +34,7 @@ You will need to have [Node](https://nodejs.org/) and [Electron](http://electron
 
     npm install
 
-##Running
+###Running
 
 After installing the dependencies, you will now be able to run open-jukebox with
 
